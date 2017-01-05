@@ -1,7 +1,9 @@
 package com.theironyard.androidcontacts;
 
+import android.provider.Settings;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -32,11 +34,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         add.setOnClickListener(this);
         list.setOnItemLongClickListener(this);
+
     }
 
     @Override
     public void onClick(View v) {
-        if(!name.getText().toString().equals("") && !phone.getText().toString().equals("")){
+        if (!name.getText().toString().equals("") && !phone.getText().toString().equals("")) {
             String contact = name.getText().toString() + " " + "(" + phone.getText().toString() + ")";
             contacts.add(contact);
             name.setText("");
